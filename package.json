@@ -1,0 +1,66 @@
+{
+  "name": "@alissonramosz/credit-ledger",
+  "version": "0.1.0",
+  "description": "Reserve, settle and release credits for async and AI jobs. Idempotent, auditable, with in-memory and PostgreSQL stores.",
+  "keywords": [
+    "credits",
+    "ledger",
+    "idempotency",
+    "postgresql",
+    "typescript",
+    "usage-based-billing",
+    "ai",
+    "async-jobs"
+  ],
+  "license": "MIT",
+  "author": "Alisson Ramos",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alissonramosz/credit-ledger.git"
+  },
+  "homepage": "https://github.com/alissonramosz/credit-ledger#readme",
+  "bugs": {
+    "url": "https://github.com/alissonramosz/credit-ledger/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./postgres": {
+      "types": "./dist/postgres.d.ts",
+      "import": "./dist/postgres.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "migrations",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "example": "npm run build && node examples/basic.mjs",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "embedded-postgres": "^18.7.0-beta.19",
+    "pg": "^8.23.1",
+    "typescript": "~5.9",
+    "vitest": "^5.1.1"
+  },
+  "allowScripts": {
+    "@embedded-postgres/linux-x64@18.7.0-beta.19": true
+  }
+}

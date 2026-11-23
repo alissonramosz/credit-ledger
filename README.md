@@ -42,6 +42,8 @@ Not on npm yet. From GitHub (Node 20 or newer; it builds on install):
 npm install github:alissonramosz/credit-ledger
 ```
 
+npm 11 may warn that the `prepare` build script is not approved yet. The install still works; to silence the warning run `npm install-scripts approve @alissonramosz/credit-ledger`.
+
 For PostgreSQL, also install `pg` (or any client with the same `connect()`/`query()` shape).
 
 ## Quick start
